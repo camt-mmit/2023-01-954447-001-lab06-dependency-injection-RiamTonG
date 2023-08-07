@@ -1,0 +1,5 @@
+<app-dynamic-section
+  *ngIf="data"
+  [items]="data"
+  (dataChange)="onDataChange($event)"
+/>

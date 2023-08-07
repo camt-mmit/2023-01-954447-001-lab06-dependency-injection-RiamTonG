@@ -1,0 +1,80 @@
+.cmp-inputs-list {
+  display: flex;
+  flex-direction: column;
+}
+:root {
+  --app-font: sans-serif;
+  --app-font-size: 16px;
+
+  --app-font-mono: monospace;
+
+  --app-icon-fill: 0;
+
+  --app-primary-color: #2f81ed;
+  --app-warm-color: #d31717;
+
+  font-family: var(--app-font);
+  font-size: var(--app-font-size);
+}
+
+button {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 4px;
+  column-gap: 4px;
+
+  font-weight: bold;
+}
+
+button > * {
+  pointer-events: none;
+}
+
+.header {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  border-bottom: 2.5px solid grey;
+  margin-bottom: 2ch;
+}
+
+.app-main-container {
+  border: 2px black solid;
+  margin: 15px;
+}
+
+.app-main-container button {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.cmp-inputs-list {
+  margin: 15px;
+}
+
+.cmp-inputs-list,
+.cmp-result {
+  flex: 1 0 auto;
+}
+
+.cmp-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 2ch;
+  margin-right: 1ch;
+  text-decoration: double;
+  text-decoration-line: underline;
+}
+
+input[type="number"] {
+  font-family: var(--app-font-mono);
+  font-size: inherit;
+  text-align: right;
+}

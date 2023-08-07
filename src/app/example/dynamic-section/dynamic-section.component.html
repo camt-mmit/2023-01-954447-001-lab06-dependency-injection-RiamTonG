@@ -1,0 +1,54 @@
+<!-- <h2>Dynamic!</h2> -->
+
+<body>
+  <button class="add-section" type="button" (click)="add()">Section</button>
+  <div class="app-main-container">
+    <div class="cmp-sections-list">
+      <div *ngFor="let item of items; let i = index">
+        <span>Section {{ i + 1 }} </span>
+        <button
+          type="button"
+          (click)="delete(i)"
+          [disabled]="items.length === 1"
+        >
+          Delete
+        </button>
+        <app-dynamic-input
+          [items]="item"
+          [section]="i + 1"
+          [nonDeletable]="items.length === 1"
+          (dataChange)="onDataChange()"
+        />
+      </div>
+    </div>
+  </div>
+</body>
+
+<!-- <div class="cmp-actions-bar">
+  <button class="add-section" type="button" (click)="add()">Section</button>
+</div>
+
+<div class="cmp-sections-list">
+  <app-dynamic-input
+    *ngFor="let item of items; let i = index"
+    [section]="i + 1"
+    [items]="item"
+    [nonDeletable]="items.length === 1"
+    (deleteSelf)="delete(i)"
+    (dataChange)="onDataChange()"
+  />
+</div> -->
+
+<!-- <div class="all-section">
+  <button type="button" (click)="addSection()">Add Section</button>
+</div>
+
+<section class="section-group" *ngFor="let item of items; let i = index">
+  <div class="section-header">
+    <h2>Section {{ i + 1 }}</h2>
+    <button type="button" (click)="deleteSection(i)" [disabled]="isDisabled">
+      Delete Section
+    </button>
+  </div>
+  <app-dynamic-input></app-dynamic-input>
+</section> -->

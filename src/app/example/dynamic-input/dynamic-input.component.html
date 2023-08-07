@@ -1,0 +1,28 @@
+<body>
+  <main class="app-main-container">
+    <button type="button" name="add-input" (click)="add()">Input</button>
+    <div class="cmp-inputs-list-container">
+      <div class="cmp-inputs-list">
+        <div *ngFor="let item of items; let i = index">
+          <label>
+            <span>Input {{ i + 1 }} : </span>
+            <input
+              #elem
+              type="number"
+              [value]="item.value"
+              (change)="onChange(i, elem.valueAsNumber)"
+            />
+          </label>
+          <button
+            type="button"
+            (click)="delete(i)"
+            [disabled]="items.length === 1"
+          >
+            Delete
+          </button>
+        </div>
+        <output class="cmp-result">{{ getResult() }}</output>
+      </div>
+    </div>
+  </main>
+</body>
